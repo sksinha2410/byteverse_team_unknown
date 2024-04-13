@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ClassMate"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.AddUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.AddBookActivity"
             android:exported="false" />
         <activity
