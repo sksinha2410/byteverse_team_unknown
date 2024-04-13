@@ -100,7 +100,5 @@
         app:itemIconTint="@color/bottom_nav_icon_color"
         app:itemTextColor="@color/bottom_nav_text_color"
         app:labelVisibilityMode="labeled"
-        android:theme="@style/bottomNavigationView"
-        />
-
+        android:theme="@style/bottomNavigationView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
