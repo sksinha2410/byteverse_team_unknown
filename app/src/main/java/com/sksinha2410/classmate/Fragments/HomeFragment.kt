@@ -1,60 +1,61 @@
 package com.sksinha2410.classmate.Fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.database.FirebaseDatabase
+import com.sksinha2410.classmate.Adapters.SubjectsAdapter
+import com.sksinha2410.classmate.DataClass.Subjects
 import com.sksinha2410.classmate.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var subjectsAdapter: SubjectsAdapter
+    private lateinit var progress: ProgressBar
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+        recyclerView = view.findViewById(R.id.subject_Recycler)
+        progress = view.findViewById(R.id.progressBar)
+        recyclerView.itemAnimator = null
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        val options: FirebaseRecyclerOptions<Subjects?> =
+            FirebaseRecyclerOptions.Builder<Subjects>()
+                .setQuery(
+                    FirebaseDatabase.getInstance().reference.child("Subjects").child("ECE").child("4"),
+                    Subjects::class.java
+                )
+                .build()
+        subjectsAdapter = SubjectsAdapter(options)
+        recyclerView.adapter = subjectsAdapter
+        subjectsAdapter.startListening()
+
+        subjectsAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
+            override fun onChanged() {
+                super.onChanged()
+
+                // Now you can reliably get the total item count
+                val itemCount = subjectsAdapter.itemCount
+                println("ItemCount: Total items = $itemCount")
+
+                // Display the item count in a Toast
+                Toast.makeText(view.context.applicationContext, itemCount.toString(), Toast.LENGTH_SHORT).show()
             }
+        })
+
+        progress.visibility = View.INVISIBLE
+        return view
     }
 }
