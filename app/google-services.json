@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "93726090119",
+    "firebase_url": "https://college-project-a5632-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "college-project-a5632",
+    "storage_bucket": "college-project-a5632.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93726090119:android:a17659e1a5fa597b1ba922",
+        "android_client_info": {
+          "package_name": "com.sksinha2410.classmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsVRaSC1TeOAB42DB82skgUv-N9-CePCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93726090119:android:06c2ca566871ecd11ba922",
+        "android_client_info": {
+          "package_name": "com.sksinha2410.studymasalaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsVRaSC1TeOAB42DB82skgUv-N9-CePCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
