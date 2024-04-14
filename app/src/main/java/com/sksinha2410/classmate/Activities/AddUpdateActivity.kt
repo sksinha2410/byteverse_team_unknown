@@ -1,21 +1,57 @@
 package com.sksinha2410.classmate.Activities
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.sksinha2410.classmate.DataClass.Books
+import com.sksinha2410.classmate.DataClass.Updates
 import com.sksinha2410.classmate.R
+import java.util.Calendar
 
 class AddUpdateActivity : AppCompatActivity() {
+     private lateinit var update: EditText
+        private lateinit var submit: Button
+        private lateinit var tvDesc: EditText
+        private lateinit var back: ImageView
+        private  var deRef = FirebaseDatabase.getInstance().getReference("Updates")
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_add_update)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_add_update)
+            callByID()
+
+            back.setOnClickListener{
+                finish()
+            }
+
+            submit.setOnClickListener {
+                if (tvDesc.text.isEmpty()) {
+                    Toast.makeText(this, "Please upload the Description", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                if (update.text.isEmpty()) {
+                    Toast.makeText(this, "Please enter the title", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }else{
+                    val file: Updates = Updates()
+                    file.title = update.text.toString()
+                    file.description = tvDesc.text.toString()
+                    deRef.setValue(file)
+                    Toast.makeText(applicationContext,"Update Sent", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+            }
+        }
+        private fun callByID() {
+            back = findViewById(R.id.ivBack)
+            submit = findViewById(R.id.btnUpload)
+            update = findViewById(R.id.update)
+            tvDesc = findViewById(R.id.tvDesc)
         }
     }
-}
