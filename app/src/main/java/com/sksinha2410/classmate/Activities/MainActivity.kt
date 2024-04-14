@@ -1,6 +1,7 @@
 package com.sksinha2410.classmate.Activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,21 +13,21 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sksinha2410.classmate.R
+import com.sksinha2410.exploreease.Chatbot.MainActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var toolbar: Toolbar
-    lateinit var notification: ImageView
+    lateinit var chatbot: ImageView
 
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        notification = findViewById(R.id.notification)
-
+        chatbot = findViewById(R.id.chatbot)
         toolbar = findViewById(R.id.toolbar)
 
         setSupportActionBar(toolbar)
@@ -36,5 +37,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController,appBarConfiguration)
         bottomNav.setupWithNavController(navController)
 
+        chatbot.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

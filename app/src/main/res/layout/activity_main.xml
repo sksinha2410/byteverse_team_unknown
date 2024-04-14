@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity"
-    android:background="@color/white"
-    >
-
+    android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -64,7 +62,7 @@
             android:background="#C5F6FF">
 
             <ImageView
-                android:id="@+id/notification"
+                android:id="@+id/chatbot"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
@@ -72,8 +70,6 @@
                 android:padding="10dp"
                 android:src="@drawable/chatbot" />
         </RelativeLayout>
-
-
     </LinearLayout>
 
     <fragment
@@ -82,7 +78,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
         app:layout_constraintLeft_toLeftOf="@id/toolbar"
         app:layout_constraintRight_toRightOf="parent"

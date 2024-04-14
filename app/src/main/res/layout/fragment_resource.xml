@@ -3,12 +3,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ResourceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bot"
+                android:layout_width="166dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="25dp"
+                android:layout_height="200dp"
+                app:cardBackgroundColor="#F48E8E"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_syllabus"
+                android:layout_alignParentEnd="true"
+                android:layout_width="166dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="#F48E8E"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_calender"
+                android:layout_width="166dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                app:cardBackgroundColor="#F48E8E"
+                android:layout_marginStart="25dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/cv_bot"
+                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_ytVideo"
+                android:layout_width="166dp"
+                android:layout_alignParentEnd="true"
+                android:layout_height="200dp"
+                app:cardBackgroundColor="#F48E8E"
+                android:layout_marginEnd="25dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/cv_bot"
+                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_pyq"
+                android:layout_width="166dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="25dp"
+                app:cardBackgroundColor="#F48E8E"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/cv_ytVideo"
+                />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_extra"
+                android:layout_width="166dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="#F48E8E"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="9dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/cv_ytVideo"
+                />
+        </RelativeLayout>
+    </ScrollView>
 
 </FrameLayout>

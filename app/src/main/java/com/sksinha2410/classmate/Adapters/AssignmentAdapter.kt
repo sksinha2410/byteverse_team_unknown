@@ -41,7 +41,6 @@ class AssignmentAdapter(options: FirebaseRecyclerOptions<Books?>, val clubName: 
             Toast.makeText(holder.name.context, "Something wrong in Developer", Toast.LENGTH_SHORT)
                 .show()
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): userAdapterHolder {
