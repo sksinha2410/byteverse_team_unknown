@@ -1,10 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SubjectDetailActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_weight="0.3"
+            android:background="#C5F6FF">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:text="Study Masalaa"
+                android:shadowColor="#A4000000"
+                android:shadowRadius="1"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/londrina_solid"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_50sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:text="Study Masalaa"
+                android:shadowColor="#B9903DC5"
+                android:shadowRadius="1"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/londrina_outline"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_50sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:background="#C5F6FF">
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="end"
+                android:background="@drawable/circle_back"
+                android:padding="10dp"
+                android:src="@drawable/chatbot" />
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1.6"
+                android:layout_marginEnd="2dp"
+                android:visibility="visible"
+                android:background="@drawable/circle_back"
+                android:padding="@dimen/_14sdp"
+                android:src="@drawable/plus"
+                app:tint="#CD58FE" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/subjectNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:text="Subject"
+        android:textColor="#000000"
+        android:fontFamily="@font/londrina_outline"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvclassNotes"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+
+                android:layout_marginHorizontal="15dp"
+                app:cardCornerRadius="@dimen/_35sdp"
+                android:backgroundTint="#ff918e"
+                android:elevation="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_130sdp"
+                        app:cardBackgroundColor="#d1c1ff"
+                        android:layout_gravity="bottom"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_28sdp"
+                        android:elevation="@dimen/_15sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/classNotes"
+                                    android:layout_marginTop="18dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Class Notes"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="40sp"
+                                    android:textColor="@color/black"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="8 January-till today"/>
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:cardBackgroundColor="#fed8ea"
+                                android:elevation="12dp"
+                                android:background="@drawable/shawdow_black"
+                                android:layout_weight="0.17">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/outdent"/>
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLabFiles"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginHorizontal="15dp"
+                android:backgroundTint="#96f3e2"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_35sdp"
+                android:elevation="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_130sdp"
+                        app:cardBackgroundColor="#d1c1ff"
+                        android:layout_gravity="bottom"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_28sdp"
+                        android:elevation="@dimen/_15sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/LabFiles"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lab Files"
+                                    android:layout_marginTop="18dp"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="40sp"
+                                    android:textColor="@color/black"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="8 January-till today"/>
+
+
+                            </LinearLayout>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:cardBackgroundColor="#fed8ea"
+                                android:elevation="12dp"
+                                android:background="@drawable/shawdow_black"
+                                android:layout_weight="0.17">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/outdent"/>
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvAssignment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginHorizontal="15dp"
+                android:backgroundTint="#f7c77d"
+                app:cardCornerRadius="@dimen/_35sdp"
+                android:elevation="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_130sdp"
+                        app:cardBackgroundColor="#d1c1ff"
+                        android:layout_gravity="bottom"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_28sdp"
+                        android:elevation="@dimen/_15sdp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/Assignment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assignment"
+                                    android:layout_marginTop="18dp"
+                                    android:textStyle="bold"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="40sp"
+                                    android:textColor="@color/black"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="8 January-till today"/>
+
+                            </LinearLayout>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:cardBackgroundColor="#fed8ea"
+                                android:elevation="12dp"
+                                android:background="@drawable/shawdow_black"
+                                android:layout_weight="0.17">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/outdent"/>
+
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_array">
+        <item>ClassNotes</item>
+        <item>Lab Files</item>
+        <item>Assignment</item>
+    </string-array>
+
+    <string-array name="notif_array">
+        <item>ClassUpdate</item>
+        <item>OtherNotification</item>
+    </string-array>
+</resources>
