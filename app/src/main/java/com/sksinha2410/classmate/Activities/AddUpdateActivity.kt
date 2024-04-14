@@ -1,15 +1,12 @@
 package com.sksinha2410.classmate.Activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.sksinha2410.classmate.DataClass.Books
 import com.sksinha2410.classmate.DataClass.Updates
 import com.sksinha2410.classmate.R
 import java.util.Calendar
@@ -21,6 +18,7 @@ class AddUpdateActivity : AppCompatActivity() {
         private lateinit var back: ImageView
         private  var deRef = FirebaseDatabase.getInstance().getReference("Updates")
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_add_update)
@@ -31,6 +29,7 @@ class AddUpdateActivity : AppCompatActivity() {
             }
 
             submit.setOnClickListener {
+                val cTime = Calendar.getInstance().timeInMillis.toString()
                 if (tvDesc.text.isEmpty()) {
                     Toast.makeText(this, "Please upload the Description", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
@@ -42,7 +41,7 @@ class AddUpdateActivity : AppCompatActivity() {
                     val file: Updates = Updates()
                     file.title = update.text.toString()
                     file.description = tvDesc.text.toString()
-                    deRef.setValue(file)
+                    deRef.child(cTime).setValue(file)
                     Toast.makeText(applicationContext,"Update Sent", Toast.LENGTH_LONG).show()
                     finish()
                 }
