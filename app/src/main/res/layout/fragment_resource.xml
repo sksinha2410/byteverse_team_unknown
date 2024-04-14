@@ -23,7 +23,12 @@
                 app:cardBackgroundColor="#F48E8E"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="9dp"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/chatbot"/>
+            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_syllabus"
                 android:layout_alignParentEnd="true"
@@ -34,19 +39,30 @@
                 app:cardBackgroundColor="#F48E8E"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="9dp"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/syllabus"/>
+            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_calender"
                 android:layout_width="166dp"
                 android:layout_height="200dp"
                 android:layout_alignParentStart="true"
-                app:cardBackgroundColor="#F48E8E"
+                app:cardBackgroundColor="#3B74AE"
                 android:layout_marginStart="25dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="9dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/cv_bot"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dsa"/>
+            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_ytVideo"
                 android:layout_width="166dp"
@@ -58,7 +74,13 @@
                 app:cardElevation="9dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/cv_bot"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/web_dev"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_pyq"
                 android:layout_width="166dp"
@@ -70,19 +92,32 @@
                 app:cardElevation="9dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/cv_ytVideo"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/and_dev"
+                    android:scaleType="fitXY"/>
+            </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_extra"
                 android:layout_width="166dp"
                 android:layout_height="200dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="25dp"
-                app:cardBackgroundColor="#F48E8E"
+                app:cardBackgroundColor="#0B0B36"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="9dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/cv_ytVideo"
-                />
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:padding="10dp"
+                    android:src="@drawable/blockchain"/>
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
 
