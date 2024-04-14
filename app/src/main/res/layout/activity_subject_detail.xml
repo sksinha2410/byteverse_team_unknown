@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
-                android:text="Study Masalaa"
+                android:text="@string/classmate"
                 android:shadowColor="#A4000000"
                 android:shadowRadius="1"
                 android:textStyle="bold"
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_80sdp"
-                android:text="Study Masalaa"
+                android:text="@string/classmate"
                 android:shadowColor="#B9903DC5"
                 android:shadowRadius="1"
                 android:textStyle="bold"

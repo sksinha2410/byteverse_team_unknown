@@ -1,10 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LabFilesActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_weight="0.3"
+            android:background="#C5F6FF">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:text="@string/classmate"
+                android:shadowColor="#A4000000"
+                android:shadowRadius="1"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/londrina_solid"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_50sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:text="@string/classmate"
+                android:shadowColor="#B9903DC5"
+                android:shadowRadius="1"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/londrina_outline"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_50sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:background="#C5F6FF">
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="end"
+                android:background="@drawable/circle_back"
+                android:padding="10dp"
+                android:src="@drawable/chatbot" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/subjectNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:text="Lab Files"
+        android:textColor="#000000"
+        android:fontFamily="@font/londrina_outline"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="5dp"
+            android:background="@color/black"
+            android:backgroundTint="#00303030"
+            app:cardCornerRadius="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lab_Recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:theme="@style/progressBar"
+                android:layout_gravity="center"
+                />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
