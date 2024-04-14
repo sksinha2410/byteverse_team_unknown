@@ -21,8 +21,7 @@ https://drive.google.com/drive/folders/1VwGcCj0u9jCm5iO9mtniAEKP8q-FCl5S?usp=sha
 ## Preview & Explanation
 
 <h5>Watch the Video</h5>
-https://drive.google.com/drive/folders/1VwGcCj0u9jCm5iO9mtniAEKP8q-FCl5S?usp=sharing
-
+https://youtu.be/3DNzf8BwUVw
 
 
 <h5>PPT link</h5>
